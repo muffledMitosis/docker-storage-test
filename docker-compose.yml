@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mongodb_persistent:
+    image: mongo
+    volumes:
+      - mongo_persistent_data:/data/db
+    ports:
+      - "27017:27017"
+
+  mongodb_volatile:
+    image: mongo
+    ports:
+      - "27018:27017"
+
+volumes:
+  mongo_persistent_data:
